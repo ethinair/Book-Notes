@@ -1,0 +1,56 @@
+7/30
+------
+Chapter 3
+Intro to predictive modeling: From correlation to supervised segmentation ????
+
+Aim:
+ -id informative-attributes-> segmenting data -> progressive attri selection
+ -finding correlation, attri selction, tree induction
+
+Predictive model-> supervised segmtt??? -> you know what you're gonna to looking for -> informative attri(final result that you want to prdict).
+ -> what means informative ? -> the quality to reduce uncertainty abt sth.
+
+Prediction:
+ ->in DS -> estimate an unknown value.
+
+Descriptive modeling:
+ ->pri purpose -> not to estimate value, but gain insight into the underlying pheno/process ?? 
+
+Deduction vs induction:
+ -deduction: top-down -> theory-hypothesis-observation-confirmation
+ -induction: obser-pattern-tentative hypothesis-theory
+ general <-> specific
+ 
+How to figure out whether a attri contain valuable infor tht help us to predict tar-attr.
+ ->find the attri that have big influence to our results. there are too many attributes for a obj -> so we just choose/find the attri that 
+   have Strong correlation w/ our tar-var.
+   
+   Q:
+   -how can you figure out whether a attri is informative ??? -> expect grp's purity . homogeneous to tar-var
+   -the value of attri: bin or multi valur or discrete or continuous??
+ 
+
+ Information gain:
+  -Splitting criterion -> based on entropy(Purity measure) [from Claude Shannon information theory]????
+   
+    -entropy: how impure one indi subset is ??
+    -IG: how much an attri imprve/decrease entropy??? (measure the change of entropy)
+     
+              Entropy equation:
+              entropy= -p1Log(p1)-p2log(p2)-...
+              
+    pi:probability of property i w/i set rang from 0 - 1, (No members of set have property -> All m of set have property i)
+     ->dose it means the frequency this property shows ?? the chance of possibale outcomes???
+     ->the entropy !!! remember the smaller the purer
+     
+              IG equation:
+              IG(parent,children)= entropy(parent)- [p(c1)*entropy(c1) + p(c2)*entropy(c2) + ... ]
+              
+     ->purpose is compare the entropy of Parents and its children -> 
+       find out whether the new subsets(after paritition accding to attri)
+       ???dose it mean the bigger of the IG(which means big diff btw P&C)-> the better the subsets(only when the result >0 ).
+    
+    Supervised sgmtt + regression prblm:
+     ->prblm w/ a numeric tar-var 
+     -> can not use IG bcs it based on distribution of the properties in the sgmtt???.
+     
